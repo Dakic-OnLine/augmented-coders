@@ -74,13 +74,15 @@
             </svg>
         </div>
 
+        <!-- main wrapper -->
         <div
             class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-mulish text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent"
         >
+            <!-- header -->
             <header id="top-header" class="sticky top-0 z-50 bg-black/10 transition duration-300">
                 <div class="container">
                     <div class="flex items-center justify-between py-5 lg:py-0">
-                        <a href="index.html"><img src="assets/images/logo_ad.png" alt="logo" class="h-16" /></a>
+                        <a href="index.html"><img src="assets/images/logo-ad.png" alt="logo" class="h-16" /></a>
                         <div class="flex items-center">
                             <div onclick="toggleMenu()" class="overlay fixed inset-0 z-[51] hidden bg-black/60 lg:hidden"></div>
                             <div class="menus">
@@ -100,11 +102,10 @@
                                 </div>
                                 <ul>
                                     <li><a href="index.html" class="active">Home</a></li>
-                                    <li><a href="index.html">The Method</a></li>
+                                    <li><a href="method.html">The Method</a></li>
                                     <li><a href="index.html">Why</a></li>
                                     <li><a href="index.html">How</a></li>
                                     <li><a href="index.html">Start</a></li>
-                                    <li><a href="career.html">Join!</a></li>
                                     <li><a href="blog.html">Blog</a></li>
                                 </ul>
                             </div>
@@ -162,6 +163,7 @@
                 </div>
             </header>
 
+            <!-- main content -->
             <div class="-mt-[82px] flex-grow overflow-x-hidden lg:-mt-[106px]">
                 <div class="overflow-hidden bg-black pt-[82px] sm:-mx-[250px] sm:rounded-b-[50%] lg:-mx-[150px] lg:pt-[106px]">
                     <div class="relative">
@@ -175,10 +177,10 @@
                             <div class="relative bg-[url(../images/world-map.png)] bg-cover bg-top bg-no-repeat pt-14 pb-0 lg:pt-20 lg:pb-60 xl:pt-36">
                                 <div class="relative z-[1] text-center text-white lg:w-3/5 ltr:lg:text-left rtl:lg:text-right xl:w-1/2">
                                     <h2 class="text-2xl font-extrabold leading-normal sm:text-3xl lg:text-[70px] lg:leading-[90px]">
-                                        <span style="text-wrap: nowrap;">Expert <span class="italic text-primary">AI-Enhanced</span> Development </span><br />by <span class="italic text-secondary">Skilled Professionals</span>    
+                                        <span style="text-wrap: nowrap;"><span class="italic text-primary">AI-Enhanced</span> Development </span><br />by <span class="italic text-secondary">Skilled Professionals</span><br /><br />
                                     </h2>
                                     <p class="my-8 text-lg lg:w-[90%]">                                        
-                                        Have your projects developed by <span class="italic text-primary">team of skilled developers</span>, <span class="italic text-secondary">enhanced</span> by AI and superior tools.
+                                        Have your projects developed by <span class="italic text-primary">team of skilled developers</span>, <span class="italic text-secondary">enhanced by AI</span> and superior tools.
                                     </p>
                                     <a href="about-us.html" class="btn mx-auto mt-2 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">read more</a>
                                 </div>
@@ -345,7 +347,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="py-14 dark:!bg-none lg:py-[100px]" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 54.69%)">
+                <!-- <section class="py-14 dark:!bg-none lg:py-[100px]" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 54.69%)">
                     <div class="container">
                         <div class="heading text-center">
                             <h6>Company Facts</h6>
@@ -808,9 +810,9 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
 
-                <section class="bg-[url(../images/team-bg.png)] bg-cover bg-center bg-no-repeat py-14 dark:bg-black/50 lg:py-[100px]">
+                <!-- <section class="bg-[url(../images/team-bg.png)] bg-cover bg-center bg-no-repeat py-14 dark:bg-black/50 lg:py-[100px]">
                     <div class="container">
                         <div class="heading text-center">
                             <h6>Meet Our Team</h6>
@@ -855,9 +857,9 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
 
-                <section class="bg-gradient-to-b from-white/60 to-transparent py-14 dark:from-white/[0.02] lg:py-[100px]">
+                <!-- <section class="bg-gradient-to-b from-white/60 to-transparent py-14 dark:from-white/[0.02] lg:py-[100px]">
                     <div class="container">
                         <div class="heading text-center">
                             <h6>Pricing Plan</h6>
@@ -1275,7 +1277,9 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
+
+                
                 <section class="relative bg-black py-14 dark:bg-transparent lg:py-[100px]">
                     <div class="absolute top-0 ltr:right-0 rtl:left-0 rtl:-rotate-180">
                         <svg width="758" height="741" viewBox="0 0 758 741" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1737,12 +1741,13 @@
                     </div>
                 </section>
             </div>
+            <!-- /main content -->
 
             <footer class="mt-auto bg-white dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.03] dark:to-transparent">
                 <div class="container">
                     <div class="grid gap-y-10 gap-x-4 py-14 sm:grid-cols-3 lg:grid-cols-5 lg:py-[100px]">
                         <div class="relative">
-                            <img src="assets/images/logo.png" alt="plurk" class="h-7" />
+                            <img src="assets/images/logo-ad.png" alt="plurk" class="h-28" />
                             <ul class="mt-12 flex items-center gap-8">
                                 <li>
                                     <a href="javascript:">
@@ -1878,6 +1883,7 @@
                 </div>
             </footer>
         </div>
+        <!-- /main wrapper -->
 
         <!-- Return to Top -->
         <button type="button" id="scrollToTopBtn" class="fixed bottom-5 z-10 hidden animate-bounce ltr:right-5 rtl:left-5" onclick="scrollToTop()">
