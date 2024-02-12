@@ -1,0 +1,190 @@
+---
+import ThemeIcon from "./ThemeIcon.astro";
+
+const toggleMenu = () => {};
+const { currentPage } = Astro.props;
+
+const toggleTheme = () => {};
+---
+
+<header class="bg-[#08111f] text-white shadow-md sticky top-0 z-20">
+  <div class="max-w-[1110px] mx-auto">
+    <div
+      class="flex justify-between md:justify-around items-center py-5 px-4 md:px-0"
+    >
+      <div class="flex-shrink-0">
+        <img src="/public/assets/images/logo-ad.png" alt="Logo" class="h-12" />
+      </div>
+      <div class="flex">
+        <button
+          class="bg-[#47bdff] h-10 w-10 text-center rounded-full block md:hidden"
+          id="menu-btn"
+        >
+          <svg
+            width="22"
+            height="18"
+            viewBox="0 0 22 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="text-white text-center ml-2"
+          >
+            <path
+              d="M2 15H11C11.552 15 12 15.447 12 16C12 16.553 11.552 17 11 17H2C1.448 17 1 16.553 1 16C1 15.447 1.448 15 2 15Z"
+              fill="currentColor"></path>
+            <path
+              d="M2 8H20C20.552 8 21 8.447 21 9C21 9.553 20.552 10 20 10H2C1.448 10 1 9.553 1 9C1 8.447 1.448 8 2 8Z"
+              fill="currentColor"></path>
+            <path
+              d="M21 2C21 1.447 20.552 1 20 1H7C6.448 1 6 1.447 6 2C6 2.553 6.448 3 7 3H20C20.552 3 21 2.553 21 2Z"
+              fill="currentColor"></path>
+          </svg>
+        </button>
+        <div class="mr-8 ml-4 block md:hidden">
+          <ThemeIcon />
+        </div>
+      </div>
+
+      <nav id="menu" class="hidden md:block">
+        <ul class="flex flex-col md:flex-row items-center">
+          <ul class="flex items-center">
+            <li>
+              <a
+                href="/"
+                class="text-white px-5 py-2 rounded-md text-md font-medium hover:bg-navy-700 hover:text-[#b476e5]"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="/the-method"
+                class="text-white px-5 py-2 rounded-md text-md font-medium hover:bg-navy-700 hover:text-[#b476e5]"
+                >The Method</a
+              >
+            </li>
+            <li>
+              <a
+                href="/offer"
+                class="text-white px-5 py-2 rounded-md text-md font-medium hover:bg-navy-700 hover:text-[#b476e5]"
+                >Offer</a
+              >
+            </li>
+            <li>
+              <a
+                href="/start"
+                class="text-white px-5 py-2 rounded-md text-md font-medium hover:bg-navy-700 hover:text-[#b476e5]"
+                >Start</a
+              >
+            </li>
+            <li>
+              <a
+                href="/blog"
+                class="text-white px-5 py-2 rounded-md text-md font-medium hover:bg-navy-700 hover:text-[#b476e5]"
+                >Blog</a
+              >
+            </li>
+            <div class="mr-8 ml-4 hidden md:block">
+              <ThemeIcon />
+            </div>
+          </ul>
+        </ul>
+      </nav>
+    </div>
+
+    <div
+      id="menu-responsive"
+      class="hidden absolute right-1 h-[100vh] top-0 w-[300px] bg-white shadow-md z-10"
+    >
+      <ul class="flex flex-col items-end py-5">
+        <button class="mb-4" id="close-menu"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6 text-black dark:text-white"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <li class="border-t-2 w-full py-3">
+          <a
+            href="/"
+            class="text-[#08111f] hover:text-[#b476e5] px-5 py-2 text-md font-medium"
+            >Home</a
+          >
+        </li>
+        <li class="border-t-2 w-full py-3">
+          <a
+            href="/the-method"
+            class="text-[#08111f] hover:text-[#b476e5] px-5 py-2 text-md font-medium"
+            >The Method</a
+          >
+        </li>
+        <li class="border-t-2 w-full py-3">
+          <a
+            href="/offer"
+            class="text-[#08111f] hover:text-[#b476e5] px-5 py-2 text-md font-medium"
+            >Offer</a
+          >
+        </li>
+        <li class="border-t-2 w-full py-3">
+          <a
+            href="/start"
+            class="text-[#08111f] hover:text-[#b476e5] px-5 py-2 text-md font-medium"
+            >Start</a
+          >
+        </li>
+        <li class="border-t-2 w-full py-3">
+          <a
+            href="/blog"
+            class="text-[#08111f] hover:text-[#b476e5] px-5 py-2 text-md font-medium"
+            >Blog</a
+          >
+        </li>
+        <!-- Add your ThemeIcon here if necessary -->
+      </ul>
+    </div>
+  </div>
+</header>
+<style>
+  .active {
+    color: #b476e5;
+  }
+</style>
+
+<script>
+  // JavaScript to toggle menu on small screens
+  // JavaScript to toggle menu on small screens
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.getElementById("menu-btn");
+    const menuResponsive = document.getElementById("menu-responsive");
+    const closeMenu = document.getElementById("close-menu");
+    const currentPath = window.location.pathname;
+    const menuLinks = document.querySelectorAll("#menu a");
+
+    menuLinks.forEach((link) => {
+      if (link.getAttribute("href") === currentPath) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+    if (menuBtn && menuResponsive && closeMenu) {
+      // Event listener for opening the menu
+      menuBtn.addEventListener("click", function () {
+        menuResponsive.classList.toggle("hidden");
+      });
+
+      // Event listener for closing the menu
+      closeMenu.addEventListener("click", function () {
+        menuResponsive.classList.add("hidden");
+      });
+    } else {
+      console.error("One or more elements could not be found");
+    }
+  });
+</script>

@@ -1,0 +1,1290 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import ThemeIcon from "../components/ThemeIcon.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <header class="bg-[#08111f] text-white shadow-md sticky top-0 z-20">
+    <div class="max-w-[1110px] mx-auto">
+      <div
+        class="flex justify-between md:justify-around items-center py-5 px-4 md:px-0"
+      >
+        <div class="flex-shrink-0">
+          <img
+            src="/public/assets/images/logo-ad.png"
+            alt="Logo"
+            class="h-12"
+          />
+        </div>
+        <div class="flex">
+          <button
+            class="bg-[#47bdff] h-10 w-10 text-center rounded-full block md:hidden"
+            id="menu-btn"
+          >
+            <svg
+              width="22"
+              height="18"
+              viewBox="0 0 22 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="text-white text-center ml-2"
+            >
+              <path
+                d="M2 15H11C11.552 15 12 15.447 12 16C12 16.553 11.552 17 11 17H2C1.448 17 1 16.553 1 16C1 15.447 1.448 15 2 15Z"
+                fill="currentColor"></path>
+              <path
+                d="M2 8H20C20.552 8 21 8.447 21 9C21 9.553 20.552 10 20 10H2C1.448 10 1 9.553 1 9C1 8.447 1.448 8 2 8Z"
+                fill="currentColor"></path>
+              <path
+                d="M21 2C21 1.447 20.552 1 20 1H7C6.448 1 6 1.447 6 2C6 2.553 6.448 3 7 3H20C20.552 3 21 2.553 21 2Z"
+                fill="currentColor"></path>
+            </svg>
+          </button>
+          <div class="mr-8 ml-4 block md:hidden">
+            <ThemeIcon />
+          </div>
+        </div>
+
+        <nav id="menu" class="hidden md:block">
+          <ul class="flex flex-col md:flex-row items-center">
+            <ul class="flex items-center">
+              <li>
+                <a
+                  href="/"
+                  class="text-white px-5 py-2 rounded-md text-md font-medium hover:bg-navy-700 hover:text-[#b476e5]"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/the-method"
+                  class="text-white px-5 py-2 rounded-md text-md font-medium hover:bg-navy-700 hover:text-[#b476e5]"
+                  >The Method</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/offer"
+                  class="text-white px-5 py-2 rounded-md text-md font-medium hover:bg-navy-700 hover:text-[#b476e5]"
+                  >Offer</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/start"
+                  class="text-white px-5 py-2 rounded-md text-md font-medium hover:bg-navy-700 hover:text-[#b476e5]"
+                  >Start</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/blog"
+                  class="text-white px-5 py-2 rounded-md text-md font-medium hover:bg-navy-700 hover:text-[#b476e5]"
+                  >Blog</a
+                >
+              </li>
+              <div class="mr-8 ml-4 hidden md:block">
+                <ThemeIcon />
+              </div>
+            </ul>
+          </ul>
+        </nav>
+      </div>
+
+      <div
+        id="menu-responsive"
+        class="hidden absolute right-1 h-[100vh] top-0 w-[300px] bg-white shadow-md z-10"
+      >
+        <ul class="flex flex-col items-end py-5">
+          <button class="mb-4" id="close-menu"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6 text-black"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+          <li class="border-t-2 w-full py-3">
+            <a
+              href="/"
+              class="text-[#08111f] hover:text-[#b476e5] px-5 py-2 text-md font-medium"
+              >Home</a
+            >
+          </li>
+          <li class="border-t-2 w-full py-3">
+            <a
+              href="/the-method"
+              class="text-[#08111f] hover:text-[#b476e5] px-5 py-2 text-md font-medium"
+              >The Method</a
+            >
+          </li>
+          <li class="border-t-2 w-full py-3">
+            <a
+              href="/offer"
+              class="text-[#08111f] hover:text-[#b476e5] px-5 py-2 text-md font-medium"
+              >Offer</a
+            >
+          </li>
+          <li class="border-t-2 w-full py-3">
+            <a
+              href="/start"
+              class="text-[#08111f] hover:text-[#b476e5] px-5 py-2 text-md font-medium"
+              >Start</a
+            >
+          </li>
+          <li class="border-t-2 w-full py-3">
+            <a
+              href="/blog"
+              class="text-[#08111f] hover:text-[#b476e5] px-5 py-2 text-md font-medium"
+              >Blog</a
+            >
+          </li>
+          <!-- Add your ThemeIcon here if necessary -->
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div
+    class="-mt-[82px] dark:bg-[#101926] flex-grow overflow-x-hidden lg:-mt-[106px]"
+  >
+    <div
+      class="overflow-hidden bg-[#08111f] pt-[82px] sm:-mx-[250px] sm:rounded-b-[50%] lg:-mx-[150px] lg:pt-[106px]"
+    >
+      <div class="relative">
+        <img
+          src="public/assets/images/banner-lefticon.png"
+          alt="banner-lefticon"
+          class="absolute left-0 top-20 sm:left-[250px] lg:left-[150px]"
+        />
+        <img
+          src="public/assets/images/banner-rightIcon.png"
+          alt="banner-rightIcon"
+          class="absolute right-0 -top-4 sm:right-[250px] lg:right-[150px]"
+        />
+        <div class="container mx-auto text-center">
+          <div
+            class="block md:flex relative bg-[url(public/assets/images/world-map.png)] bg-cover bg-top bg-no-repeat pt-14 pb-0 lg:pt-20 lg:pb-32 xl:pt-36"
+          >
+            <div
+              class="relative z-[1] text-center text-white lg:w-3/5 ltr:lg:text-left rtl:lg:text-right xl:w-1/2"
+            >
+              <h2
+                class="text-2xl font-extrabold leading-normal sm:text-3xl lg:text-[70px] lg:leading-[90px] no-wrap"
+              >
+                <span class="no-wrap">
+                  Create the <p class="text-[#3b82f680] inline md:block">
+                    Future with
+                  </p>
+                  <span class="italic text-[#b476e5] block md:inline"
+                    >AI and Tech</span
+                  >
+                </span>
+              </h2>
+              <div class="my-6">
+                <h2 class="text-xl px-7">
+                  Have your projects developed by <span
+                    class="italic text-[#3b82f680]"
+                    >team of skilled
+                  </span>
+                </h2>
+                <p class="text-xl">
+                  <span class="text-[#3b82f680]">developers</span>, enhanced by
+                  AI and superior tools.
+                </p>
+                <div class="ml-32 mt-8">
+                  <a
+                    href="offer.html"
+                    class="btn md:ml-12 text-black p-4 rounded-xl mt-2 block w-fit bg-white"
+                    >read more</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div>
+              <img
+                src="public/assets/images/home-banner-icon.svg"
+                alt="home-banner-icon"
+                class="rtl:rotate-y-180"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="py-12 dark:bg-[#08111f] lg:py-24 flex justify-center">
+    <div class="container text-center max-w-[1110px] mx-auto">
+      <div
+        class="flex flex-col items-center gap-5 lg:flex-row"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <div class="flex-none lg:max-w-[130px]">
+          <div class="grid grid-cols-3 gap-3 sm:gap-5 lg:grid-cols-1">
+            <div
+              class="rounded-[10px] bg-white py-4 px-6 text-center shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:bg-white/10 sm:py-[19px]"
+            >
+              <span>
+                <img
+                  src="assets/images/consulting/about-icon1.svg"
+                  class="mx-auto"
+                  alt=""
+                />
+              </span>
+              <p
+                class="text-b mt-2 font-semibold text-black dark:text-white sm:text-xl"
+              >
+                Prototype
+              </p>
+            </div>
+            <div
+              class="rounded-[10px] bg-white py-4 px-6 text-center shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:bg-white/10 sm:py-[19px]"
+            >
+              <span>
+                <img
+                  src="assets/images/consulting/about-icon2.svg"
+                  class="mx-auto"
+                  alt=""
+                />
+              </span>
+              <p
+                class="mt-2 font-semibold text-black dark:text-white sm:text-xl"
+              >
+                Develop
+              </p>
+            </div>
+            <div
+              class="rounded-[10px] bg-white py-4 px-6 text-center shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:bg-white/10 sm:py-[19px]"
+            >
+              <span>
+                <img
+                  src="assets/images/consulting/about-icon3.svg"
+                  class="mx-auto"
+                  alt=""
+                />
+              </span>
+              <p
+                class="mt-2 font-semibold text-black dark:text-white sm:text-xl"
+              >
+                Launch!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="grid flex-1 grid-cols-1 items-center gap-10 md:grid-cols-2">
+          <div>
+            <img
+              src="assets/images/consulting/about-img.png"
+              class="mx-auto"
+              alt=""
+            />
+          </div>
+          <div class="space-y-4 text-left ltr:md:text-left rtl:md:text-right">
+            <h3
+              class="text-3xl font-black uppercase text-black dark:text-white sm:text-[40px] sm:leading-[60px]"
+            >
+              1-2-3 Offer
+            </h3>
+            <p class="text-3xl dark:text-white font-medium pb-4 mb-16">
+              We will develop your idea into functioning and viable app and
+              launch it, in 90 days.
+            </p>
+            <div>
+              <a
+                href=""
+                class="bg-[#47bdff] px-8 py-5 rounded-lg !mt-10 text-white"
+                >Start</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="relative bg-black py-12 dark:bg-[#1C2531] lg:py-24 flex justify-center text-center"
+  >
+    <div class="max-w-[1110px] mx-auto">
+      <div class="absolute bottom-0 ltr:right-0 rtl:left-0">
+        <img
+          src="assets/images/consulting/bg-icon.svg"
+          class="rtl:rotate-y-180"
+          alt=""
+        />
+      </div>
+      <div class="container relative z-[1]">
+        <div class="heading text-center text-white">
+          <h2 class="mb-2 text-4xl !font-black uppercase !dark:text-white">
+            How we <span class="text-[#b476e5]">make it happen</span>
+          </h2>
+          <p class="text-lg">Our 12 weeks plan for your business success.</p>
+        </div>
+        <div
+          class="mt-10 grid grid-cols-1 gap-[30px] sm:grid-cols-2 lg:grid-cols-3"
+          data-aos="flip-left"
+          data-aos-duration="1000"
+        >
+          <div class="group">
+            <div class="overflow-hidden">
+              <img
+                src="public/assets/images/consulting/services2.jpg"
+                class="w-full duration-200 group-hover:rotate-2 group-hover:scale-110"
+                alt=""
+              />
+            </div>
+            <div
+              class="relative mx-4 -mt-10 space-y-2.5 bg-[#1c2331] px-4 pt-[22px] text-center dark:bg-black md:px-[26px]"
+            >
+              <h5
+                class="text-2xl font-bold text-[#47bdff] primary group-hover:text-[#b476e5] lg:text-[#7780a1]"
+              >
+                Prototype
+              </h5>
+              <div
+                class="mx-auto h-1 w-[50px] bg-[#b476e5] duration-200 group-hover:bg-primary"
+              >
+              </div>
+              <p class="pb-[60px] text-[#7780A1] text-lg font-semibold">
+                We will develop your idea from rough outline to fully fleshed
+                out prototype.
+              </p>
+              <span class="absolute bottom-0 opacity-20 ltr:right-0 rtl:left-0">
+                <img src="assets/images/consulting/services-icon1.svg" alt="" />
+              </span>
+            </div>
+          </div>
+          <div class="group">
+            <div class="overflow-hidden">
+              <img
+                src="assets/images/consulting/services1.jpg"
+                class="w-full duration-200 group-hover:rotate-2 group-hover:scale-110"
+                alt=""
+              />
+            </div>
+            <div
+              class="relative mx-4 -mt-10 space-y-2.5 bg-[#1c2331] px-4 pt-[22px] text-center dark:bg-black md:px-[26px]"
+            >
+              <h5
+                class="text-2xl font-bold text-[#47bdff] group-hover:text-secondary"
+              >
+                Development
+              </h5>
+              <div
+                class="mx-auto h-1 w-[50px] bg-[#b476e5] duration-200 group-hover:bg-primary"
+              >
+              </div>
+              <p class="pb-[60px] text-[#7780A1] font-semibold">
+                We will add functionality and features to your prototype and
+                make it ready for launch.
+              </p>
+              <span class="absolute bottom-0 opacity-20 ltr:right-0 rtl:left-0">
+                <img src="assets/images/consulting/services-icon2.svg" alt="" />
+              </span>
+            </div>
+          </div>
+          <div class="group">
+            <div class="overflow-hidden">
+              <img
+                src="assets/images/consulting/services3.jpg"
+                class="w-full duration-200 group-hover:rotate-2 group-hover:scale-110"
+                alt=""
+              />
+            </div>
+            <div
+              class="relative mx-4 -mt-10 space-y-2.5 bg-[#1c2331] px-4 pt-[22px] text-center dark:bg-black md:px-[26px]"
+            >
+              <h5
+                class="text-2xl font-bold text-[#47bdff] group-hover:text-secondary"
+              >
+                Launch
+              </h5>
+              <div
+                class="mx-auto h-1 w-[50px] bg-secondary duration-200 group-hover:bg-primary"
+              >
+              </div>
+              <p class="pb-[60px] text-[#7780A1] font-semibold">
+                Launch and promote your app to the world. Fix and tweak anything
+                that comes up.
+              </p>
+              <span class="absolute bottom-0 opacity-20 ltr:right-0 rtl:left-0">
+                <img src="assets/images/consulting/services-icon3.svg" alt="" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 dark:bg-[#1C2331] lg:py-20 flex justify-center">
+    <div class="container max-w-[1110px] mx-auto">
+      <div class="text-center ltr:md:text-left rtl:md:text-right">
+        <div class="mx-auto inline-flex items-center gap-2.5 bg-black p-2.5">
+          <span>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.09106 0.922891C4.26412 0.0268889 5.36879 -0.310967 6.01328 0.335155L8.72195 3.05047C8.88268 3.21162 9.08805 3.32082 9.31153 3.36366L13.0771 4.09131C13.9731 4.26422 14.3109 5.36877 13.6648 6.01338L10.9497 8.72186C10.7886 8.88263 10.6793 9.08815 10.6362 9.31148L9.9089 13.0771C9.73584 13.9731 8.63117 14.311 7.98668 13.6648L5.27801 10.9499C5.11728 10.7888 4.91191 10.6796 4.68842 10.6363L0.922825 9.90907C0.0268234 9.73578 -0.310912 8.63124 0.335135 7.98663L3.05025 5.27815C3.2114 5.11738 3.32061 4.91186 3.36376 4.68853L4.09106 0.922891Z"
+                fill="#B476E5"></path>
+            </svg>
+          </span>
+          <p class="text-lg font-extrabold text-white">Value</p>
+          <span>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.091 0.922891C4.26406 0.0268889 5.36872 -0.310967 6.01322 0.335155L8.72189 3.05047C8.88262 3.21162 9.08799 3.32082 9.31147 3.36366L13.0771 4.09131C13.9731 4.26422 14.3108 5.36877 13.6648 6.01338L10.9496 8.72186C10.7885 8.88263 10.6793 9.08815 10.6361 9.31148L9.90883 13.0771C9.73578 13.9731 8.63111 14.311 7.98662 13.6648L5.27795 10.9499C5.11721 10.7888 4.91185 10.6796 4.68836 10.6363L0.922764 9.90907C0.0267624 9.73578 -0.310973 8.63124 0.335074 7.98663L3.05019 5.27815C3.21134 5.11738 3.32055 4.91186 3.3637 4.68853L4.091 0.922891Z"
+                fill="#47BDFF"></path>
+            </svg>
+          </span>
+        </div>
+      </div>
+      <h3
+        class="mt-7 text-center text-3xl font-extrabold text-black dark:text-white md:text-[50px] md:leading-[70px] ltr:md:text-left rtl:md:text-right"
+      >
+        Key Features & Benefits
+      </h3>
+      <p
+        class="mt-2.5 text-center text-lg font-medium ltr:md:text-left rtl:md:text-right text-[#7780a1] mx-6"
+      >
+        Apps we are building are future proof and ready to grow. These are
+        benefits of working with us and our technology.
+      </p>
+      <div
+        class="mt-12 grid gap-[30px] text-center sm:grid-cols-2 ltr:sm:text-left rtl:sm:text-right md:grid-cols-3"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <div>
+          <span>
+            <svg
+              class="mx-auto h-[42px] w-[42px] sm:mx-0"
+              viewBox="0 0 42 42"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M34.6467 17.9156C33.7341 12.2984 28.9628 8.11945 23.2743 7.95494C23.0038 7.94435 22.7402 8.04173 22.5416 8.22562C22.343 8.40952 22.2256 8.66485 22.2155 8.93533V9.02684L22.856 18.6084C22.898 19.2534 23.4525 19.7438 24.0978 19.7065L33.7056 19.066C33.9763 19.046 34.2279 18.9188 34.4045 18.7127C34.5812 18.5066 34.6683 18.2385 34.6467 17.9679V17.9156Z"
+                stroke="#47BDFF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M16.6207 13.6542C17.2318 13.5129 17.8573 13.8256 18.1109 14.3993C18.1774 14.5344 18.2173 14.6807 18.2285 14.8308C18.3592 16.687 18.6338 20.7522 18.7907 22.9483C18.8174 23.344 19.0008 23.7125 19.3 23.9726C19.5994 24.2326 19.99 24.3627 20.3854 24.3339L28.4507 23.8373C28.8107 23.8155 29.1637 23.9436 29.4261 24.1912C29.6885 24.4387 29.837 24.7837 29.8364 25.1444C29.5095 30.0147 26.0103 34.0863 21.2444 35.1417C16.4787 36.197 11.5877 33.9834 9.23515 29.7064C8.53289 28.4754 8.08815 27.1146 7.92797 25.7065C7.85949 25.2743 7.83322 24.8365 7.84954 24.3993C7.86341 19.1981 11.5162 14.7167 16.6076 13.6542"
+                stroke="#47BDFF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <h5 class="mt-5 text-lg font-extrabold text-black dark:text-white">
+            Interactive Development
+          </h5>
+          <p class="mt-2.5 text-[15px] font-semibold text-[#7780a1] mx-6">
+            During your time as a client, we will make sure our work is visible
+            to you whenever it is possible. You will be able to track not only
+            tasks being completed, but app being developed.
+          </p>
+        </div>
+        <div>
+          <span>
+            <svg
+              class="mx-auto h-[42px] w-[42px] sm:mx-0"
+              viewBox="0 0 42 42"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M16.0695 25.1136L18.2253 18.2253L25.1135 16.0696L22.9578 22.958L16.0695 25.1136Z"
+                stroke="#47BDFF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M20.5915 33.6C27.7759 33.6 33.6 27.7759 33.6 20.5916C33.6 13.4072 27.7759 7.58313 20.5915 7.58313C13.4072 7.58313 7.5831 13.4072 7.5831 20.5916C7.5831 27.7759 13.4072 33.6 20.5915 33.6Z"
+                stroke="#47BDFF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <h5 class="mt-5 text-lg font-extrabold text-black dark:text-white">
+            Mobile Ready
+          </h5>
+          <p class="mt-2.5 text-[15px] font-semibold text-[#7780a1] mx-6">
+            Your app will work well both as a responsive web-app, but also on
+            mobile devices. IOS and Android features are supported, like
+            notifications, local storage, offline work, camera, etc.
+          </p>
+        </div>
+        <div>
+          <span>
+            <svg
+              class="mx-auto h-[42px] w-[42px] sm:mx-0"
+              viewBox="0 0 42 42"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.9054 8.10138H14.833C10.6615 8.10138 8.0459 11.0547 8.0459 15.2357V26.5146C8.0459 30.6957 10.6492 33.6491 14.833 33.6491H26.8038C30.9889 33.6491 33.5922  30.6957 33.5922 26.5146V21.0502"
+                stroke="#47BDFF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M16.2906 19.1332L26.4286 8.99531C27.6917 7.73366 29.7387 7.73366 31.0018 8.99531L32.6528 10.6463C33.9157 11.9093 33.9157 13.9578 32.6528 15.2194L22.466 25.4062C21.9138 25.9583 21.165 26.269 20.3835 26.269H15.3018L15.4292 21.141C15.4482 20.3867 15.7562 19.6678 16.2906 19.1332Z"
+                stroke="#47BDFF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M24.888 10.5616L31.0823 16.7559"
+                stroke="#47BDFF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <h5 class="mt-5 text-lg font-extrabold text-black dark:text-white">
+            Deep Linking
+          </h5>
+          <p class="mt-2.5 text-[15px] font-semibold text-[#7780a1] mx-6">
+            One of highly sought after features of mobile apps is ability to
+            "deep-link" or connect users to specific parts of the app from
+            promotional emails or other places. We support this feature.
+          </p>
+        </div>
+        <div>
+          <span>
+            <svg
+              class="mx-auto h-[42px] w-[42px] sm:mx-0"
+              viewBox="0 0 42 42"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M34.258 14.4234L33.3153 12.7876C32.5178 11.4033 30.7504 10.9259 29.3644 11.72C28.7046 12.1087 27.9173 12.219 27.1761 12.0265C26.435 11.8342 25.8008 11.3547 25.4135 10.6942C25.1643 10.2744 25.0303 9.79614 25.0253 9.30792C25.0477 8.52519 24.7525 7.76669 24.2066 7.2052C23.6608 6.64372 22.911 6.32707 22.1279 6.32739H20.2287C19.4615 6.32738 18.726 6.63308 18.1848 7.17684C17.6437 7.72061 17.3415 8.4576 17.3453 9.22474C17.3225 10.8086 16.0319 12.0807 14.4479 12.0805C13.9596 12.0755 13.4815 11.9416 13.0616 11.6923C11.6755 10.8981 9.90813 11.3756 9.11062 12.7598L8.09863 14.4234C7.30208 15.8058 7.77309 17.572 9.15221 18.3743C10.0487 18.8918 10.6009 19.8484 10.6009 20.8835C10.6009 21.9186 10.0487 22.8751 9.15221 23.3927C7.77484 24.1895 7.30332 25.9515 8.09863 27.3297L9.05517 28.9794C9.42884 29.6537 10.0558 30.1512 10.7972 30.3619C11.5387 30.5727 12.3337 30.4792 13.0061 30.1023C13.6671 29.7166 14.4548 29.611 15.1942 29.8088C15.9335 30.0066 16.5631 30.4916 16.9432 31.1559C17.1924 31.5757 17.3262 32.054 17.3314 32.5422C17.3314 34.1424 18.6286 35.4395 20.2287 35.4395H22.1279C23.7226 35.4395 25.0176 34.1508 25.0253 32.556C25.0216 31.7865 25.3257 31.0474 25.8698 30.5033C26.414 29.959 27.1531 29.655 27.9226 29.6587C28.4096 29.6718 28.8859 29.8051 29.309 30.0468C30.6914 30.8434 32.4576 30.3724 33.2599 28.9933L34.258 27.3297C34.6443 26.6666 34.7504 25.8768 34.5527 25.1352C34.3548 24.3936 33.8696 23.7615 33.2043 23.3788C32.5392 22.9961 32.054 22.364 31.8561 21.6224C31.6584 20.8809 31.7645 20.091 32.1508 19.4279C32.402 18.9892 32.7658 18.6256 33.2043 18.3743C34.5752 17.5725 35.0451 15.8165 34.258 14.4372V14.4234Z"
+                stroke="#B476E5"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M21.1852 24.876C23.3902 24.876 25.1777 23.0885 25.1777 20.8835C25.1777 18.6784 23.3902 16.8909 21.1852 16.8909C18.9802 16.8909 17.1927 18.6784 17.1927 20.8835C17.1927 23.0885 18.9802 24.876 21.1852 24.876Z"
+                stroke="#B476E5"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <h5 class="mt-5 text-lg font-extrabold text-black dark:text-white">
+            User &amp; Data Management
+          </h5>
+          <p class="mt-2.5 text-[15px] font-semibold text-[#7780a1] mx-6">
+            Data of your users and other related data will not be locked but
+            available to you through management panel, potentially through API
+            as well, depending on your needs.
+          </p>
+        </div>
+        <div>
+          <span>
+            <svg
+              class="mx-auto h-[42px] w-[42px] sm:mx-0"
+              viewBox="0 0 42 42"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.5967 31.4439C26.1745 31.4439 31.5069 26.1115 31.5069 19.5337C31.5069 12.9558 26.1745 7.62341 19.5967 7.62341C13.0188 7.62341 7.68642 12.9558 7.68642 19.5337C7.68642 26.1115 13.0188 31.4439 19.5967 31.4439Z"
+                stroke="#B476E5"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M27.8805 28.4361L32.55 33.0935"
+                stroke="#B476E5"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <h5 class="mt-5 text-lg font-extrabold text-black dark:text-white">
+            Analytics &amp; Tracking
+          </h5>
+          <p class="mt-2.5 text-[15px] font-semibold text-[#7780a1] mx-6">
+            We will integrate your app with analytics and tracking tools of your
+            choice, so you can track your users and their behavior. Usually
+            these are some behaviour tracking like Google Analytics and
+            performance tracking like LogRocket or Sentry.
+          </p>
+        </div>
+        <div>
+          <span>
+            <svg
+              class="mx-auto h-[42px] w-[42px] sm:mx-0"
+              viewBox="0 0 42 42"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M22.5883 9.04291L26.0436 15.8373C26.2166 16.18 26.5508 16.4192 26.9387 16.4746L34.6742 17.5669C34.9875 17.6078 35.2694 17.7681 35.4619 18.0132C35.823 18.4726 35.7677 19.1229 35.335 19.5182L29.7286 24.8178C29.4436 25.0803 29.3167 25.4653 29.3914 25.8401L30.734 33.3185C30.8281 33.9382 30.3954 34.5187 29.7614 34.6194C29.4988 34.6587 29.2302 34.6179 28.9916 34.5027L22.102 30.972C21.7559 30.7882 21.3412 30.7882 20.9951 30.972L14.0548 34.5216C13.4744 34.8104 12.7642 34.596 12.448 34.0404C12.3271 33.8158 12.2853 33.5605 12.3271 33.3112L13.6698 25.8329C13.7369 25.4595 13.6102 25.0759 13.3327 24.8119L7.69631 19.5139C7.23681 19.0676 7.23383 18.3413 7.69184 17.8921L7.69631 17.8862C7.88579 17.7186 8.11852 17.6063 8.37065 17.5625L16.1076 16.4702C16.494 16.4105 16.8267 16.1742 17.0028 15.8315L20.4549 9.04291C20.5937 8.76728 20.8399 8.55582 21.1383 8.45957C21.4381 8.36186 21.7663 8.3852 22.0483 8.52373C22.2795 8.63603 22.469 8.81832 22.5883 9.04291Z"
+                stroke="#B476E5"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <h5 class="mt-5 text-lg font-extrabold text-black dark:text-white">
+            Social Login
+          </h5>
+          <p class="mt-2.5 text-[15px] font-semibold">
+            It was popularised in the 1960s with the release of Letraset sheets
+            containing.
+          </p>
+        </div>
+
+        <div>
+          <span>
+            <svg
+              class="mx-auto h-[42px] w-[42px] sm:mx-0"
+              viewBox="0 0 42 42"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M22.5883 9.04291L26.0436 15.8373C26.2166 16.18 26.5508 16.4192 26.9387 16.4746L34.6742 17.5669C34.9875 17.6078 35.2694 17.7681 35.4619 18.0132C35.823 18.4726 35.7677 19.1229 35.335 19.5182L29.7286 24.8178C29.4436 25.0803 29.3167 25.4653 29.3914 25.8401L30.734 33.3185C30.8281 33.9382 30.3954 34.5187 29.7614 34.6194C29.4988 34.6587 29.2302 34.6179 28.9916 34.5027L22.102 30.972C21.7559 30.7882 21.3412 30.7882 20.9951 30.972L14.0548 34.5216C13.4744 34.8104 12.7642 34.596 12.448 34.0404C12.3271 33.8158 12.2853 33.5605 12.3271 33.3112L13.6698 25.8329C13.7369 25.4595 13.6102 25.0759 13.3327 24.8119L7.69631 19.5139C7.23681 19.0676 7.23383 18.3413 7.69184 17.8921L7.69631 17.8862C7.88579 17.7186 8.11852 17.6063 8.37065 17.5625L16.1076 16.4702C16.494 16.4105 16.8267 16.1742 17.0028 15.8315L20.4549 9.04291C20.5937 8.76728 20.8399 8.55582 21.1383 8.45957C21.4381 8.36186 21.7663 8.3852 22.0483 8.52373C22.2795 8.63603 22.469 8.81832 22.5883 9.04291Z"
+                stroke="#B476E5"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <h5 class="mt-5 text-lg font-extrabold text-black dark:text-white">
+            Built To Scale
+          </h5>
+          <p class="mt-2.5 text-[15px] font-semibold text-[#7780a1] mx-6">
+            We build your app with scalability in mind. We use best practices
+            and tools to make sure your app can grow with your business. We will
+            host it on scalable cloud infrastructure as well as your database
+            will be scalable.
+          </p>
+        </div>
+
+        <div>
+          <span>
+            <svg
+              class="mx-auto h-[42px] w-[42px] sm:mx-0"
+              viewBox="0 0 42 42"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M22.5883 9.04291L26.0436 15.8373C26.2166 16.18 26.5508 16.4192 26.9387 16.4746L34.6742 17.5669C34.9875 17.6078 35.2694 17.7681 35.4619 18.0132C35.823 18.4726 35.7677 19.1229 35.335 19.5182L29.7286 24.8178C29.4436 25.0803 29.3167 25.4653 29.3914 25.8401L30.734 33.3185C30.8281 33.9382 30.3954 34.5187 29.7614 34.6194C29.4988 34.6587 29.2302 34.6179 28.9916 34.5027L22.102 30.972C21.7559 30.7882 21.3412 30.7882 20.9951 30.972L14.0548 34.5216C13.4744 34.8104 12.7642 34.596 12.448 34.0404C12.3271 33.8158 12.2853 33.5605 12.3271 33.3112L13.6698 25.8329C13.7369 25.4595 13.6102 25.0759 13.3327 24.8119L7.69631 19.5139C7.23681 19.0676 7.23383 18.3413 7.69184 17.8921L7.69631 17.8862C7.88579 17.7186 8.11852 17.6063 8.37065 17.5625L16.1076 16.4702C16.494 16.4105 16.8267 16.1742 17.0028 15.8315L20.4549 9.04291C20.5937 8.76728 20.8399 8.55582 21.1383 8.45957C21.4381 8.36186 21.7663 8.3852 22.0483 8.52373C22.2795 8.63603 22.469 8.81832 22.5883 9.04291Z"
+                stroke="#B476E5"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <h5 class="mt-5 text-lg font-extrabold text-black dark:text-white">
+            SEO Optimized
+          </h5>
+          <p class="mt-2.5 text-[15px] font-semibold text-[#7780a1] mx-6">
+            Parts of your app that are public will be customized with SEO in
+            mind. We will make sure your app is visible to search engines and
+            can be indexed properly.
+          </p>
+        </div>
+
+        <div>
+          <span>
+            <svg
+              class="mx-auto h-[42px] w-[42px] sm:mx-0"
+              viewBox="0 0 42 42"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M22.5883 9.04291L26.0436 15.8373C26.2166 16.18 26.5508 16.4192 26.9387 16.4746L34.6742 17.5669C34.9875 17.6078 35.2694 17.7681 35.4619 18.0132C35.823 18.4726 35.7677 19.1229 35.335 19.5182L29.7286 24.8178C29.4436 25.0803 29.3167 25.4653 29.3914 25.8401L30.734 33.3185C30.8281 33.9382 30.3954 34.5187 29.7614 34.6194C29.4988 34.6587 29.2302 34.6179 28.9916 34.5027L22.102 30.972C21.7559 30.7882 21.3412 30.7882 20.9951 30.972L14.0548 34.5216C13.4744 34.8104 12.7642 34.596 12.448 34.0404C12.3271 33.8158 12.2853 33.5605 12.3271 33.3112L13.6698 25.8329C13.7369 25.4595 13.6102 25.0759 13.3327 24.8119L7.69631 19.5139C7.23681 19.0676 7.23383 18.3413 7.69184 17.8921L7.69631 17.8862C7.88579 17.7186 8.11852 17.6063 8.37065 17.5625L16.1076 16.4702C16.494 16.4105 16.8267 16.1742 17.0028 15.8315L20.4549 9.04291C20.5937 8.76728 20.8399 8.55582 21.1383 8.45957C21.4381 8.36186 21.7663 8.3852 22.0483 8.52373C22.2795 8.63603 22.469 8.81832 22.5883 9.04291Z"
+                stroke="#B476E5"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <h5 class="mt-5 text-lg font-extrabold text-black dark:text-white">
+            Payments Integration
+          </h5>
+          <p class="mt-2.5 text-[15px] font-semibold text-[#7780a1] mx-6">
+            Making money is very important, to us and to you. We will integrate
+            your app with payment providers like Stripe, PayPal, etc. so you can
+            accept payments from your users.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 lg:py-24 dark:bg-[#101926] flex justify-center">
+    <div class="container max-w-[1110px] mx-auto">
+      <div class="heading text-center">
+        <h4 class="!font-black uppercase text-4xl bolder dark:text-white">
+          Most Asked <span class="text-[#b476e5]">Questions</span>
+        </h4>
+        <h6 class="mx-auto mt-2 max-w-[520px] !font-medium text-[#7780a1]">
+          Things people usually ask before they start working with us. If you
+          have any other questions, feel free to contact us.
+        </h6>
+      </div>
+      <div class="flex flex-col items-center gap-5 sm:gap-10 lg:flex-row">
+        <div class="w-full max-w-[552px] flex-none">
+          <img
+            src="assets/images/consulting/question-img.png"
+            class="rtl:rotate-y-180"
+            alt=""
+          />
+        </div>
+        <div class="accordion-container flex-1">
+          <div class="ac mt-5 border-none bg-transparent w-[520px]">
+            <h2 class="ac-header rounded-t-md">
+              <button
+                type="button"
+                class="ac-trigger relative !flex items-center justify-between gap-2 bg-[#7780a14d] w-[520px] !px-5 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white sm:!text-xl"
+              >
+                <div>What does your logo represent?</div>
+                <div
+                  class="trigger-icon grid h-6 w-6 place-content-center rounded-full border-2 border-gray text-black transition dark:text-white"
+                >
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
+                      fill="currentColor"></path>
+                    <path
+                      d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
+                      fill="currentColor"></path>
+                  </svg>
+                </div>
+              </button>
+            </h2>
+            <div class="ac-panel">
+              <p
+                class="ac-text bg-white !p-5 !font-mulish !text-sm !font-bold !leading-[18px] !text-[#7780a1] dark:!bg-white/5"
+              >
+                Our logo is created by AI under our guidance.
+                <br />
+                It represent the richness of choices and opportunities available
+                online, also represents the chaos that too many choices and technological
+                change brings to us.
+              </p>
+            </div>
+          </div>
+          <div class="ac mt-5 border-none bg-[#7780a14d] w-[520px]">
+            <h2 class="ac-header rounded-t-md">
+              <button
+                type="button"
+                class="ac-trigger relative !flex w-full items-center justify-between gap-2 !bg-gray/30 !px-5 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white sm:!text-xl"
+              >
+                <div>Are your service easy to use?</div>
+                <div
+                  class="trigger-icon grid h-6 w-6 place-content-center rounded-full border-2 border-gray text-black transition dark:text-white"
+                >
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
+                      fill="currentColor"></path>
+                    <path
+                      d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
+                      fill="currentColor"></path>
+                  </svg>
+                </div>
+              </button>
+            </h2>
+            <div class="ac-panel">
+              <p
+                class="ac-text bg-white !p-5 !font-mulish !text-base !font-medium text-[#7780a1] dark:!bg-white/5"
+              >
+                We did a lot to make it as easy and clear as possible. There are
+                number of aspects of our engagement that are meant to help us
+                work better together. For example, you are always in control of
+                the project, you can see the progress and provide feedback at
+                any time as we make our work transparent. We also charge same
+                public price for our work to everyone, so you can be sure you
+                are not overpaying. Also, we charge in 2 week intervals, so your
+                financial exposure is always limited.
+                <br />
+                We believe this to be the best way to work together, we really want
+                to focus on creating value for you, not on negotiating contracts
+                and terms.
+              </p>
+            </div>
+          </div>
+          <div class="ac mt-5 border-none bg-[#7780a14d] w-[520px]">
+            <h2 class="ac-header rounded-t-md">
+              <button
+                type="button"
+                class="ac-trigger relative !flex w-full items-center justify-between gap-2 !bg-gray/30 !px-5 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white sm:!text-xl"
+              >
+                <div>Will i receive future updates?</div>
+                <div
+                  class="trigger-icon grid h-6 w-6 place-content-center rounded-full border-2 border-gray text-black transition dark:text-white"
+                >
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
+                      fill="currentColor"></path>
+                    <path
+                      d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
+                      fill="currentColor"></path>
+                  </svg>
+                </div>
+              </button>
+            </h2>
+            <div class="ac-panel">
+              <p
+                class="ac-text bg-white !p-5 !font-mulish !text-sm !font-bold !leading-[18px] text-[#7780a1] dark:!bg-white/5"
+              >
+                Definitely we are available and have a dedicated mode of
+                engagement for maintenance and support. We can also help you
+                with future updates and new features.
+              </p>
+            </div>
+          </div>
+          <div class="ac mt-5 border-none bg-[#7780a14d] w-[520px]">
+            <h2 class="ac-header rounded-t-md">
+              <button
+                type="button"
+                class="ac-trigger relative !flex w-full items-center justify-between gap-2 !bg-gray/30 !px-5 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white sm:!text-xl"
+              >
+                <div>Is this services work in my country?</div>
+                <div
+                  class="trigger-icon grid h-6 w-6 place-content-center rounded-full border-2 border-gray text-black transition dark:text-white"
+                >
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
+                      fill="currentColor"></path>
+                    <path
+                      d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
+                      fill="currentColor"></path>
+                  </svg>
+                </div>
+              </button>
+            </h2>
+            <div class="ac-panel">
+              <p
+                class="ac-text bg-white !p-5 !font-mulish !text-sm !font-bold !leading-[18px] text-[#7780a1] dark:!bg-white/5"
+              >
+                We are US based and work best for US based companies. However,
+                we are also global operation and would love to work with you, no
+                matter where you are located. Limiting factor might be that we
+                are used to providers of services that are available in the US,
+                so hosting, payment etc, we are familiar with those.
+              </p>
+            </div>
+          </div>
+          <div class="ac mt-5 border-none bg-[#7780a14d] w-[520px]">
+            <h2 class="ac-header rounded-t-md">
+              <button
+                type="button"
+                class="ac-trigger relative !flex w-full items-center justify-between gap-2 !bg-gray/30 !px-5 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white sm:!text-xl"
+              >
+                <div>How much I will pay?</div>
+                <div
+                  class="trigger-icon grid h-6 w-6 place-content-center rounded-full border-2 border-gray text-black transition dark:text-white"
+                >
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
+                      fill="currentColor"></path>
+                    <path
+                      d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
+                      fill="currentColor"></path>
+                  </svg>
+                </div>
+              </button>
+            </h2>
+            <div class="ac-panel">
+              <p
+                class="ac-text bg-white !p-5 !font-mulish !text-sm !font-bold !leading-[18px] text-[#7780a1] dark:!bg-white/5"
+              >
+                Our prices are public and same for every client. You can engage
+                us interactively and pay in 2 week intervals. Or there are
+                packages for apps, for clients that prefer that way of working.
+                We do limit features that are possible to be done in such
+                interval, but you can engage us weekly afterwards if you want to
+                add more features.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 dark:bg-[#1C2331] lg:py-[100px] flex justify-center">
+    <div class="container max-w-[1110px] mx-auto">
+      <div class="relative z-10 lg:flex">
+        <div
+          class="heading text-center lg:mb-0 lg:w-1/3 ltr:lg:pr-10 ltr:lg:text-left rtl:lg:pl-10 rtl:lg:text-right"
+        >
+          <h6>Get In Touch.</h6>
+          <h4 class="sm:!leading-[50px]">Ready to Get Started?</h4>
+          <img
+            src="assets/images/form-img.png"
+            alt="form-img"
+            class="mx-auto"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          />
+        </div>
+        <div
+          class="text-black bg-white px-4 py-12 dark:bg-[#101626] lg:w-2/3 lg:px-8"
+        >
+          <h4 class="text-lg text-black py-2">Contact Info</h4>
+          <p class="pb-2">
+            Before you contact us, please review following:
+
+            <ul class="font-bold text-black list-disc list-inside">
+              <li class="py-1">Technology we are using</li>
+              <li class="py-1">Expertise we have</li>
+              <li class="py-1">Our prices, they are same for everyone</li>
+              <li class="py-1">We operate from Chicago, which means CST</li>
+            </ul>
+          </p>
+        </div>
+        <div
+          class="bg-white pt-24 pb=12 px-4 dark:bg-[#101626] lg:w-2/3 lg:px-8 text-black"
+        >
+          <p>
+            Please include details such as what your project idea is, how urgent
+            it is as well as when do you likely would like to start it as well
+            as who are stakeholders in this project.
+          </p>
+          <p class="pt-4 text-lg">
+            Email: <a href="mailto:zeljko@dakic.com">zeljko@dakic.com</a>
+          </p>
+          <p class="pt-2 text-lg">
+            WhatsApp: <a href="https://wa.me/13129276020">Zeljko</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer
+    class="mt-auto bg-white dark:bg-[#161F2B] dark:bg-gradient-to-b dark:from-white/[0.03] dark:to-transparent flex justify-center"
+  >
+    <div>
+      <div class="container">
+        <div
+          class="grid gap-y-10 gap-x-4 py-14 sm:grid-cols-3 lg:grid-cols-5 lg:py-[100px]"
+        >
+          <div class="relative">
+            <img
+              src="assets/images/logo-ad.png"
+              alt="Augmented Developers"
+              class="h-28"
+            />
+            <ul class="mt-12 flex items-center gap-8">
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/augmented-devs/"
+                  target="_blank"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    ><path
+                      d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z"
+                    ></path></svg
+                  >
+                </a>
+              </li>
+
+              <li>
+                <a href="mailto:zeljko@dakic.com">
+                  <svg
+                    width="24"
+                    height="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    ><path
+                      d="M24 21h-24v-18h24v18zm-23-16.477v15.477h22v-15.477l-10.999 10-11.001-10zm21.089-.523h-20.176l10.088 9.171 10.088-9.171z"
+                    ></path></svg
+                  >
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/+13129276020">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    ><path
+                      d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+                    ></path></svg
+                  >
+                </a>
+              </li>
+            </ul>
+            <img
+              src="assets/images/footer-shape.png"
+              alt="footer-shape"
+              class="absolute bottom-4 right-0 sm:left-0"
+            />
+            <img
+              src="assets/images/footer-shape-dark.png"
+              alt="footer-shape-dark"
+              class="absolute bottom-0 right-0 hidden dark:block sm:left-0"
+            />
+          </div>
+          <div>
+            <ul class="flex flex-col gap-3 font-bold">
+              <li
+                class="mb-3 text-lg font-extrabold text-black dark:text-white"
+              >
+                Quick Menu
+              </li>
+              <li>
+                <a
+                  href="index.html"
+                  class="inline-block transition hover:scale-110 hover:text-[#b476e5] text-[#7780a1]"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about-us"
+                  class="inline-block transition hover:scale-110 hover:text-[#b476e5] text-[#7780a1]"
+                  >About Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="flex flex-col gap-3 font-bold">
+              <li
+                class="mb-3 text-lg font-extrabold text-black dark:text-white"
+              >
+                Services
+              </li>
+              <li>
+                <a
+                  href="offer.html"
+                  class="inline-block transition hover:scale-110 hover:text-[#b476e5] text-[#7780a1]"
+                  >MVP development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="offer.html"
+                  class="inline-block transition hover:scale-110 hover:text-[#b476e5] text-[#7780a1]"
+                  >Micro Saas</a
+                >
+              </li>
+              <li>
+                <a
+                  href="offer.html"
+                  class="inline-block transition hover:scale-110 hover:text-[#b476e5] text-[#7780a1]"
+                  >Company Website</a
+                >
+              </li>
+              <li>
+                <a
+                  href="offer.html"
+                  class="inline-block transition hover:scale-110 hover:text-[#b476e5] text-[#7780a1]"
+                  >Ongoing development</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="flex flex-col gap-3 font-bold">
+              <li
+                class="mb-3 text-lg font-extrabold text-black dark:text-white"
+              >
+                Info
+              </li>
+              <li>
+                <a
+                  href="terms-conditions.html"
+                  class="inline-block transition hover:scale-110 hover:text-[#b476e5] text-[#7780a1]"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="privacy-policy.html"
+                  class="inline-block transition hover:scale-110 hover:text-[#b476e5] text-[#7780a1]"
+                  >Privacy Policy</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="faq.html"
+                  class="inline-block transition hover:scale-110 hover:text-[#b476e5] text-[#7780a1]"
+                  >FAQs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="blog.html"
+                  class="inline-block transition hover:scale-110 hover:text-[#b476e5] text-[#7780a1]"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="flex flex-col gap-3 font-bold">
+              <li
+                class="mb-3 text-lg font-extrabold text-black dark:text-white"
+              >
+                Information
+              </li>
+              <li>Chicago, IL U.S. - 60618</li>
+              <li>
+                Email - <a href="mailto:zeljko@dakic.com">zeljko@dakic.com</a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/+13129276020"
+                  class="inline-block transition hover:scale-110 hover:text-[#b476e5] text-[#7780a1]"
+                  >Talk to us - WhatsApp</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] py-5 dark:border-t-2 dark:border-white/5 dark:bg-none"
+      >
+        <div class="container">
+          <div
+            class="flex flex-col items-center justify-between text-center font-bold dark:text-white md:flex-row"
+          >
+            <div>
+              Augmented Developers is a product of <a
+                href="javascript:"
+                class="text-primary transition hover:text-[#b476e5] text-[#7780a1]"
+                >Dakic OnLine LLC</a
+              > - Copyright © <span class="curr-year">2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .active {
+      color: #b476e5;
+    }
+  </style>
+
+  <script>
+    // JavaScript to toggle menu on small screens
+    // JavaScript to toggle menu on small screens
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuBtn = document.getElementById("menu-btn");
+      const menuResponsive = document.getElementById("menu-responsive");
+      const closeMenu = document.getElementById("close-menu");
+      const currentPath = window.location.pathname;
+      const menuLinks = document.querySelectorAll("#menu a");
+
+      menuLinks.forEach((link) => {
+        if (link.getAttribute("href") === currentPath) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+      if (menuBtn && menuResponsive && closeMenu) {
+        // Event listener for opening the menu
+        menuBtn.addEventListener("click", function () {
+          menuResponsive.classList.toggle("hidden");
+        });
+
+        // Event listener for closing the menu
+        closeMenu.addEventListener("click", function () {
+          menuResponsive.classList.add("hidden");
+        });
+      } else {
+        console.error("One or more elements could not be found");
+      }
+    });
+  </script>
+</Layout>
