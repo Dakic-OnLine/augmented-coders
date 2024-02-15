@@ -1,0 +1,82 @@
+---
+import Footer from "../components/Footer.astro";
+import BackToTop from "../components/BackToTop.astro";
+import SecondHeder from "../components/SecondHeder.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plurk – Tailwind CSS Multipurpose Landing Templates</title>
+    <script src="assets/js/swiper-bundle.min.js" defer></script>
+    <script src="assets/js/custom.js" defer></script>
+    <script src="assets/js/vanilla-counter.js" defer></script>
+    <script src="assets/js/aos.js" defer></script>
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <!-- Favicon -->
+    <link rel="icon" type="icon" href="assets/images/favicon.png" />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Swiper Slider -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <!-- AOS Animation CSS -->
+    <link href="assets/css/aos.css" rel="stylesheet" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- screen loader -->
+    <div
+      class="screen_loader fixed inset-0 z-[60] grid place-content-center bg-[#fafafa] dark:bg-[#060818]"
+    >
+      <img src="assets/svg/loading.svg" alt="Loading animation" />
+    </div>
+    <!-- main wrapper -->
+    <div
+      class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-mulish text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent"
+    >
+      <SecondHeder currentPath={currentPath} />
+      <slot />
+      <Footer />
+    </div>
+    <BackToTop />
+  </body>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      AOS.init();
+    });
+
+    var sc_project = 12922424;
+    var sc_invisible = 1;
+    var sc_security = "7645f680";
+  </script>
+  <script
+    type="text/javascript"
+    src="https://www.statcounter.com/counter/counter.js"
+    async></script>
+  <noscript
+    ><div class="statcounter">
+      <a title="web stats" href="https://statcounter.com/" target="_blank"
+        ><img
+          class="statcounter"
+          src="https://c.statcounter.com/12922424/0/7645f680/1/"
+          alt="web stats"
+        /></a
+      >
+    </div></noscript
+  >
+</html>

@@ -1,0 +1,107 @@
+---
+import SecondLayout from "../layouts/SecondLayout.astro";
+import BlogLandingMain from "../sections/BlogLandingMain.astro";
+import BlogLandingLatestBlogs from "../sections/BlogLandingLatestBlogs.astro";
+import BlogLandingTrending from "../sections/BlogLandingTrending.astro";
+import BlogLandingStories from "../sections/BlogLandingStories.astro";
+import BlogLandingNewsLetter from "../sections/BlogLandingNewsLetter.astro";
+import BlogLandingCelebrations from "../sections/BlogLandingCelebrations.astro";
+import BlogLandingRecents from "../sections/BlogLandingRecents.astro";
+import BlogLandingContent from "../sections/BlogLandingContent.astro";
+import BlogLandingRandomPosts from "../sections/BlogLandingRandomPosts.astro";
+---
+
+<SecondLayout title="Home page">
+  <BlogLandingMain />
+  <BlogLandingLatestBlogs />
+  <BlogLandingTrending />
+  <BlogLandingStories />
+  <BlogLandingNewsLetter />
+  <BlogLandingCelebrations />
+  <BlogLandingRecents />
+  <BlogLandingContent />
+  <BlogLandingRandomPosts />
+</SecondLayout>
+<script>
+  // feedback Slider
+
+  var feedbackSwiper = new Swiper(".feedback-slider", {
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 30,
+    speed: 1000,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      prevEl: ".feedback-slider-button-prev",
+      nextEl: ".feedback-slider-button-next",
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+      },
+      600: {
+        slidesPerView: 2,
+      },
+      1000: {
+        slidesPerView: 3,
+      },
+    },
+  });
+
+  // Stories Slider
+
+  var storySwiper = new Swiper(".Stories-slider", {
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 30,
+    speed: 1000,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      prevEl: ".Stories-slider-button-prev",
+      nextEl: ".Stories-slider-button-next",
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+      },
+      600: {
+        slidesPerView: 2,
+      },
+      1000: {
+        slidesPerView: 3,
+      },
+    },
+  });
+
+  // Counter Js
+  VanillaCounter();
+</script>
+
+<!-- Default Statcounter code for Augmented Developers
+  https://augmented-devs.com/ -->
+<script type="text/javascript">
+  var sc_project = 12922424;
+  var sc_invisible = 1;
+  var sc_security = "7645f680";
+</script>
+<script
+  type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+<noscript
+  ><div class="statcounter">
+    <a title="web stats" href="https://statcounter.com/" target="_blank"
+      ><img
+        class="statcounter"
+        src="https://c.statcounter.com/12922424/0/7645f680/1/"
+        alt="web stats"
+      /></a
+    >
+  </div></noscript
+>

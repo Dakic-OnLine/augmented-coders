@@ -1,0 +1,92 @@
+---
+import SecondLayout from "../layouts/SecondLayout.astro";
+import AboutMain from "../sections/AboutMain.astro";
+import AboutTeam from "../sections/AboutTeam.astro";
+import AboutWho from "../sections/AboutWho.astro";
+import AboutHow from "../sections/AboutHow.astro";
+import AboutGrowth from "../sections/AboutGrowth.astro";
+import AboutAwards from "../sections/AboutAwards.astro";
+import AboutCreativeTeam from "../sections/AboutCreativeTeam.astro";
+import AboutBlog from "../sections/AboutBlog.astro";
+import AboutTestimonial from "../sections/AboutTestimonial.astro";
+import AboutLast from "../sections/AboutLast.astro";
+---
+
+<SecondLayout title="Home page">
+  <AboutMain />
+  <AboutTeam />
+  <AboutWho />
+  <AboutHow />
+  <AboutGrowth />
+  <AboutAwards />
+  <AboutCreativeTeam />
+  <AboutBlog />
+  <AboutTestimonial />
+  <AboutLast />
+</SecondLayout>
+<script>
+  // Testimonial Slider
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    speed: 1000,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".testimonial-swiper-button-next",
+      prevEl: ".testimonial-swiper-button-prev",
+    },
+  });
+
+  // Blog Slider
+  var swiper = new Swiper(".blog-slider", {
+    loop: true,
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".blog-slider-button-next",
+      prevEl: ".blog-slider-button-prev",
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+
+  // Counter Js
+  VanillaCounter();
+</script>
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    AOS.init();
+  });
+  var sc_project = 12922424;
+  var sc_invisible = 1;
+  var sc_security = "7645f680";
+</script>
+<script
+  type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+<noscript
+  ><div class="statcounter">
+    <a title="web stats" href="https://statcounter.com/" target="_blank"
+      ><img
+        class="statcounter"
+        src="https://c.statcounter.com/12922424/0/7645f680/1/"
+        alt="web stats"
+      /></a
+    >
+  </div></noscript
+>
