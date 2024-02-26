@@ -9,7 +9,7 @@ const { currentPath } = Astro.props;
 >
   <div class="container max-w-[1142px]">
     <div class="flex items-center justify-between py-5 lg:py-0">
-      <a href="index.html"
+      <a href="index"
         ><img src="assets/images/logo-ad.png" alt="logo" class="h-16" /></a
       >
       <div class="flex items-center">
@@ -41,33 +41,33 @@ const { currentPath } = Astro.props;
           <ul>
             <li>
               <a
-                href="index.html"
-                class={currentPath === "/index.html" ? "active" : ""}>Home</a
+                href="/"
+                class={currentPath === "/" ? "active" : ""}>Home</a
               >
             </li>
             <li>
               <a
-                href="the-method.html"
-                class={currentPath === "/the-method.html" ? "active" : ""}
+                href="the-method"
+                class={currentPath === "/the-method" ? "active" : ""}
                 >The Method</a
               >
             </li>
             <li>
               <a
-                href="offer.html"
-                class={currentPath === "/offer.html" ? "active" : ""}>Offer</a
+                href="offer"
+                class={currentPath === "/offer" ? "active" : ""}>Offer</a
               >
             </li>
             <li>
               <a
-                href="start.html"
-                class={currentPath === "/start.html" ? "active" : ""}>Start</a
+                href="start"
+                class={currentPath === "/start" ? "active" : ""}>Start</a
               >
             </li>
             <li>
               <a
-                href="blog.html"
-                class={currentPath.startsWith("/blog.html") ? "active" : ""}
+                href="blog"
+                class={currentPath.startsWith("/blog") ? "active" : ""}
                 >Blog</a
               >
             </li>
