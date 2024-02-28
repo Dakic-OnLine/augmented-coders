@@ -1,5 +1,6 @@
 ---
 const { currentPath } = Astro.props;
+let offerPattern = /^\/offer/;
 ---
 
 <!-- header -->
@@ -55,7 +56,7 @@ const { currentPath } = Astro.props;
             <li>
               <a
                 href="offer"
-                class={currentPath === "/offer" ? "active" : ""}>Offer</a
+                class={ offerPattern.test(currentPath) ? "active" : ""}>Offer</a
               >
             </li>
             <li>
